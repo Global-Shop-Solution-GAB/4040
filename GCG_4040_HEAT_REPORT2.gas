@@ -1,0 +1,1085 @@
+Program.Sub.ScreenSU.Start
+Gui.F_WO..create
+Gui.F_WO..caption("Select Work Order Range")
+Gui.F_WO..size(8235,3825)
+Gui.F_WO..minx(0)
+Gui.F_WO..miny(0)
+				 
+Gui.F_WO..position(0,0)
+Gui.F_WO..event(UnLoad,Unload)
+Gui.F_WO..alwaysontop(False)
+Gui.F_WO..fontname("Arial")
+Gui.F_WO..fontsize(8)
+Gui.F_WO..forecolor(0)
+Gui.F_WO..fontstyle(,,,)
+Gui.F_WO..BackColor(-2147483633)
+Gui.F_WO..controlbox(True)
+Gui.F_WO..maxbutton(True)
+Gui.F_WO..minbutton(True)
+Gui.F_WO..mousepointer(0)
+Gui.F_WO..moveable(True)
+Gui.F_WO..sizeable(False)
+Gui.F_WO..ShowInTaskBar(True)
+Gui.F_WO..titlebar(True)
+Gui.F_WO.lblFrom.create(label,"Beginning WO & Suffix",True,1935,255,1,200,200,True,0,Arial,8,-2147483633,0)
+Gui.F_WO.lblFrom.defaultvalue("")
+Gui.F_WO.lblFrom.controlgroup(0)
+Gui.F_WO.lblTo.create(label,"Ending WO  Suffix",True,1935,255,1,200,1000,True,0,Arial,8,-2147483633,0)
+Gui.F_WO.lblTo.defaultvalue("")
+Gui.F_WO.lblTo.controlgroup(0)
+Gui.F_WO.txtWOFrom.create(textbox,"",True,960,300,0,200,400,True,0,Arial,8,-2147483643,1)
+Gui.F_WO.txtWOFrom.maxLength(6)
+Gui.F_WO.txtWOFrom.defaultvalue("")
+Gui.F_WO.txtWOFrom.controlgroup(0)
+Gui.F_WO.txtToWO.create(textbox,"",True,960,300,0,200,1200,True,0,Arial,8,-2147483643,1)
+Gui.F_WO.txtToWO.maxLength(6)
+Gui.F_WO.txtToWO.defaultvalue("")
+Gui.F_WO.txtToWO.controlgroup(0)
+Gui.F_WO.cmdFrom.create(button)
+Gui.F_WO.cmdFrom.caption("^")
+Gui.F_WO.cmdFrom.visible(True)
+Gui.F_WO.cmdFrom.size(345,300)
+Gui.F_WO.cmdFrom.zorder(0)
+Gui.F_WO.cmdFrom.position(1930,400)
+Gui.F_WO.cmdFrom.enabled(True)
+Gui.F_WO.cmdFrom.fontname("Arial")
+Gui.F_WO.cmdFrom.fontsize(8)
+Gui.F_WO.cmdFrom.event(Click,BrowserFrom)
+Gui.F_WO.cmdFrom.defaultvalue("")
+Gui.F_WO.cmdFrom.controlgroup(0)
+Gui.F_WO.cmdTo.create(button)
+Gui.F_WO.cmdTo.caption("^")
+Gui.F_WO.cmdTo.visible(True)
+Gui.F_WO.cmdTo.size(345,300)
+Gui.F_WO.cmdTo.zorder(0)
+Gui.F_WO.cmdTo.position(1930,1200)
+Gui.F_WO.cmdTo.enabled(True)
+Gui.F_WO.cmdTo.fontname("Arial")
+Gui.F_WO.cmdTo.fontsize(8)
+Gui.F_WO.cmdTo.event(Click,BrowserTo)
+Gui.F_WO.cmdTo.defaultvalue("")
+Gui.F_WO.cmdTo.controlgroup(0)
+Gui.F_WO.cmdPrint.create(button)
+Gui.F_WO.cmdPrint.caption("Print")
+Gui.F_WO.cmdPrint.visible(True)
+Gui.F_WO.cmdPrint.size(3150,375)
+Gui.F_WO.cmdPrint.zorder(0)
+Gui.F_WO.cmdPrint.position(200,2500)
+Gui.F_WO.cmdPrint.enabled(True)
+Gui.F_WO.cmdPrint.fontname("Arial")
+Gui.F_WO.cmdPrint.fontsize(8)
+Gui.F_WO.cmdPrint.event(Click,cmdprint_click)
+Gui.F_WO.cmdPrint.defaultvalue("")
+Gui.F_WO.cmdPrint.controlgroup(0)
+Gui.F_WO.txtFromSuffix.create(textbox,"",True,585,300,0,1345,400,True,0,Arial,8,-2147483643,1)
+Gui.F_WO.txtFromSuffix.maxLength(3)
+Gui.F_WO.txtFromSuffix.defaultvalue("")
+Gui.F_WO.txtFromSuffix.controlgroup(0)
+Gui.F_WO.lblDash1.create(label,"-",True,600,255,1,1215,430,True,0,Arial,8,-2147483633,0)
+Gui.F_WO.lblDash1.defaultvalue("")
+Gui.F_WO.lblDash1.controlgroup(0)
+Gui.F_WO.lblDash2.create(label,"-",True,600,255,1,1215,1245,True,0,Arial,8,-2147483633,0)
+Gui.F_WO.lblDash2.defaultvalue("")
+Gui.F_WO.lblDash2.controlgroup(0)
+Gui.F_WO.txtToSuffix.create(textbox,"",True,585,300,0,1345,1200,True,0,Arial,8,-2147483643,1)
+Gui.F_WO.txtToSuffix.maxLength(3)
+Gui.F_WO.txtToSuffix.defaultvalue("")
+Gui.F_WO.txtToSuffix.controlgroup(0)
+Gui.F_WO.cmdADD.create(button)
+Gui.F_WO.cmdADD.caption("Add")
+Gui.F_WO.cmdADD.visible(True)
+Gui.F_WO.cmdADD.size(795,330)
+Gui.F_WO.cmdADD.zorder(0)
+Gui.F_WO.cmdADD.position(2800,800)
+Gui.F_WO.cmdADD.enabled(True)
+Gui.F_WO.cmdADD.fontname("Arial")
+Gui.F_WO.cmdADD.fontsize(8)
+Gui.F_WO.cmdADD.event(Click,Add)
+Gui.F_WO.cmdADD.tooltip("Add")
+Gui.F_WO.cmdADD.defaultvalue("")
+Gui.F_WO.cmdADD.controlgroup(0)
+Gui.F_WO.lvwBeg.create(listview)
+Gui.F_WO.lvwBeg.view(3)
+Gui.F_WO.lvwBeg.addlistviewcolumn("Key",0,0)
+Gui.F_WO.lvwBeg.addlistviewcolumn("Beginning WO",1290,0)
+Gui.F_WO.lvwBeg.addlistviewcolumn("Suffix",675,0)
+Gui.F_WO.lvwBeg.addlistviewcolumn("Ending WO",1095,0)
+Gui.F_WO.lvwBeg.addlistviewcolumn("Suffix",705,0)
+Gui.F_WO.lvwBeg.visible(True)
+Gui.F_WO.lvwBeg.size(3870,2775)
+Gui.F_WO.lvwBeg.zorder(0)
+Gui.F_WO.lvwBeg.position(3900,200)
+Gui.F_WO.lvwBeg.enabled(True)
+Gui.F_WO.lvwBeg.fontname("Arial")
+Gui.F_WO.lvwBeg.fontsize(8)
+Gui.F_WO.lvwBeg.event(ItemClick,lvwbeg_click)
+Gui.F_WO.cmdDelete.create(button)
+Gui.F_WO.cmdDelete.caption("Remove")
+Gui.F_WO.cmdDelete.visible(True)
+Gui.F_WO.cmdDelete.size(810,330)
+Gui.F_WO.cmdDelete.zorder(0)
+Gui.F_WO.cmdDelete.position(2810,1220)
+Gui.F_WO.cmdDelete.enabled(True)
+Gui.F_WO.cmdDelete.fontname("Arial")
+Gui.F_WO.cmdDelete.fontsize(8)
+Gui.F_WO.cmdDelete.event(Click,Remove)
+Gui.F_WO.cmdDelete.tooltip("Delete")
+Gui.F_WO.cmdDelete.defaultvalue("")
+Gui.F_WO.cmdDelete.controlgroup(0)
+Gui.F_WO.chk1.create(checkbox)
+Gui.F_WO.chk1.caption("Print Data Book")
+Gui.F_WO.chk1.visible(True)
+Gui.F_WO.chk1.size(1935,255)
+Gui.F_WO.chk1.zorder(0)
+Gui.F_WO.chk1.position(200,1805)
+Gui.F_WO.chk1.enabled(True)
+Gui.F_WO.chk1.alignment(0)
+Gui.F_WO.chk1.fontname("Arial")
+Gui.F_WO.chk1.fontsize(8)
+Gui.F_WO.chk1.defaultvalue("")
+Gui.F_WO.chk1.controlgroup(0)
+Gui.F_DataBook..create
+Gui.F_DataBook..caption("Print Documents")
+Gui.F_DataBook..size(10200,5100)
+Gui.F_DataBook..minx(0)
+Gui.F_DataBook..miny(0)
+Gui.F_DataBook..position(0,0)
+Gui.F_DataBook..event(Resize,F_DataBook_resize)
+Gui.F_DataBook..event(UnLoad,f_databook_unload)
+Gui.F_DataBook..alwaysontop(False)
+Gui.F_DataBook..fontname("Arial")
+Gui.F_DataBook..fontsize(8)
+Gui.F_DataBook..forecolor(0)
+Gui.F_DataBook..fontstyle(,,,)
+Gui.F_DataBook..BackColor(-2147483633)
+Gui.F_DataBook..controlbox(True)
+Gui.F_DataBook..maxbutton(False)
+Gui.F_DataBook..minbutton(False)
+Gui.F_DataBook..mousepointer(0)
+Gui.F_DataBook..moveable(True)
+Gui.F_DataBook..sizeable(True)
+Gui.F_DataBook..ShowInTaskBar(True)
+Gui.F_DataBook..titlebar(True)
+Gui.F_DataBook.txt_Printer.create(textbox,"",True,4320,300,0,200,300,False,0,Arial,8,-2147483643,1)
+Gui.F_DataBook.txt_Printer.defaultvalue("")
+Gui.F_DataBook.txt_Printer.controlgroup(0)
+Gui.F_DataBook.cmd_txt_Printer.create(button)
+Gui.F_DataBook.cmd_txt_Printer.caption("^")
+Gui.F_DataBook.cmd_txt_Printer.visible(True)
+Gui.F_DataBook.cmd_txt_Printer.size(330,330)
+Gui.F_DataBook.cmd_txt_Printer.zorder(0)
+Gui.F_DataBook.cmd_txt_Printer.position(4700,300)
+Gui.F_DataBook.cmd_txt_Printer.enabled(True)
+Gui.F_DataBook.cmd_txt_Printer.fontname("Arial")
+Gui.F_DataBook.cmd_txt_Printer.fontsize(8)
+Gui.F_DataBook.cmd_txt_Printer.event(Click,cmd_txt_printer_click)
+Gui.F_DataBook.cmd_txt_Printer.defaultvalue("")
+Gui.F_DataBook.cmd_txt_Printer.controlgroup(0)
+Gui.F_DataBook.lblPrinter.create(label,"Printer",True,1935,255,1,200,100,True,0,Arial,8,-2147483633,0)
+Gui.F_DataBook.lblPrinter.defaultvalue("")
+Gui.F_DataBook.lblPrinter.controlgroup(0)
+Gui.F_DataBook.gsfg_DataBook.create(gsflexgrid)
+Gui.F_DataBook.gsfg_DataBook.FixedRows(0)
+Gui.F_DataBook.gsfg_DataBook.FixedCols(0)
+Gui.F_DataBook.gsfg_DataBook.visible(True)
+Gui.F_DataBook.gsfg_DataBook.size(8910,2940)
+Gui.F_DataBook.gsfg_DataBook.zorder(0)
+Gui.F_DataBook.gsfg_DataBook.position(200,800)
+Gui.F_DataBook.gsfg_DataBook.enabled(True)
+Gui.F_DataBook.gsfg_DataBook.event(CommandClick,gsfg_databook_commandclick)
+Gui.F_DataBook.gsfg_DataBook.event(CheckClick,gsfg_databook_checkclick)
+Gui.F_DataBook.cmd_Print.create(button)
+Gui.F_DataBook.cmd_Print.caption("Print")
+Gui.F_DataBook.cmd_Print.visible(True)
+Gui.F_DataBook.cmd_Print.size(855,375)
+Gui.F_DataBook.cmd_Print.zorder(0)
+Gui.F_DataBook.cmd_Print.position(500,4000)
+Gui.F_DataBook.cmd_Print.enabled(True)
+Gui.F_DataBook.cmd_Print.fontname("Arial")
+Gui.F_DataBook.cmd_Print.fontsize(8)
+Gui.F_DataBook.cmd_Print.event(Click,cmd_print_click)
+Gui.F_DataBook.cmd_Print.defaultvalue("")
+Gui.F_DataBook.cmd_Print.controlgroup(0)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Variable.Global.sKey.Declare(String)
+Variable.Global.iOrdinal.Declare(Long,0)
+Variable.Global.bBusy.Declare(Boolean,False)
+Variable.Global.iKey.Declare(Long,0)
+Variable.Global.iBILogID.Declare(Long,0)
+Variable.Global.iBIRunID.Declare(Long,0)
+Variable.UDT.uReport.Define("Assembly",String,Assembly)
+Variable.UDT.uReport.Define("Heat",String,Heat)
+Variable.UDT.uReport.Define("Link_Exists",String,Link_Exists)
+Variable.UDT.uReport.Define("Lot_PO",String,Lot_PO)
+Variable.UDT.uReport.Define("Mat_Part",String,Mat_Part)
+Variable.UDT.uReport.Define("Ord_Qty",Float,Ord_Qty)
+Variable.UDT.uReport.Define("Parent",String,Parent)
+Variable.UDT.uReport.Define("Parent_Desc",String,Parent_Desc)
+Variable.UDT.uReport.Define("Sort_Part",String,Sort_Part)
+Variable.UDT.uReport.Define("UM",String,UM)
+Variable.UDT.uReport.Define("Suffix",String)
+Variable.UDT.uReport.Define("Job",String)
+Variable.UDT.uReport.Define("BIRUNID",Long,BIRUNID)
+Variable.uGlobal.uReport.Declare("uReport")
+Variable.UDT.uJob.Define("Job",String,Job)
+Variable.UDT.uJob.Define("Suffix",String,Suffix)
+Variable.UDT.uJob.Define("Part",String,Part)
+Variable.UDT.uJob.Define("Description",String,Description)
+Variable.UDT.uJob.Define("Customer",String,Customer)
+Variable.UDT.uJob.Define("Assembly",String)
+Variable.uGlobal.uJob.Declare("uJob")
+Variable.UDT.uOps.Define("Job",String,Job)
+Variable.UDT.uOps.Define("Suffix",String,Suffix)
+Variable.UDT.uOps.Define("Seq",String,Seq)
+Variable.UDT.uOps.Define("Description",String,Description)
+Variable.UDT.uOps.Define("LMO",String,LMO)
+Variable.UDT.uOps.Define("Part",String,Part)
+Variable.UDT.uOps.Define("UM",String,UM)
+Variable.UDT.uOps.Define("Hours_Estimated",Float,Hours_Estimated)
+Variable.UDT.uOps.Define("Code_Sort_Oper",String,Code_Sort_Oper)
+Variable.uGlobal.uOps.Declare("uOps")
+Variable.UDT.uHeat.Define("Job",String,Job)
+Variable.UDT.uHeat.Define("Suffix",String,Suffix)
+Variable.UDT.uHeat.Define("Heat",String,Heat)
+Variable.UDT.uHeat.Define("Lot",String,Lot)
+Variable.UDT.uHeat.Define("Purchase_Order",String,Purchase_Order)
+Variable.UDT.uHeat.Define("Sequence",String,Sequence)
+Variable.UDT.uHeat.Define("Part",String,Part)
+Variable.UDT.uHeat.Define("Location",String,Location)
+Variable.UDT.uHeat.Define("BIN",String,BIN)
+Variable.UDT.uHeat.Define("Serial_Number",String,Serial_Number)
+Variable.uGlobal.uHeat.Declare("uHeat")
+Variable.UDT.uDataBook.Define("File",String)
+Variable.UDT.uDataBook.Define("Description",String)
+Variable.uGlobal.uDocs.Declare("uDataBook")
+Variable.Global.bPrinted.Declare(Boolean,False)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'Coded by: SFF
+'Project Start Date: 10/18/2014
+'Mod RRC
+'Customer Specific - Not for All Customer Environments - Heat Report by Parent Part on Work Order Header, on report Parent Part is represented as Work order
+
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+F.ODBC.Connection!con.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass,50000)
+			  
+
+F.Intrinsic.Control.CallSub(Initialize) 
+
+Gui.F_WO..Show
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4040_HEAT_REPORT.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.Main.End
+
+Program.Sub.Unload.Start
+F.ODBC.Connection!con.Close
+F.Intrinsic.Control.End
+
+Program.Sub.Unload.End
+
+Program.Sub.BrowserFrom.Start
+F.Intrinsic.Control.SetErrorHandler("BrowserFrom_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sTitle.Declare(String)
+V.Local.sWidth.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.String.Split("Job*!*Suffix*!*Description","*!*",V.Local.sTitle)
+F.Intrinsic.String.Split("1500*!*1000*!*2500","*!*",V.Local.sWidth)
+V.Local.sSQL.Set("Select JOB, SUFFIX, DESCRIPTION From V_JOB_HEADER Order By JOB+ Suffix")
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.Browser("Job Browser","con",V.Local.sSQL,V.Local.sTitle,V.Local.sWidth,V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.F_WO.txtWOFrom.Text(V.Local.sRet(0))
+	Gui.F_WO.txtFromSuffix.Text(V.Local.sRet(1))
+	Gui.F_WO.txtToWO.Text(V.Local.sRet(0))
+	Gui.F_WO.txtToSuffix.Text(V.Local.sRet(1))
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("BrowserFrom_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4040_HEAT_REPORT.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.BrowserFrom.End
+
+Program.Sub.BrowserTo.Start
+F.Intrinsic.Control.SetErrorHandler("BrowserTo_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sTitle.Declare(String)
+V.Local.sWidth.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.String.Split("Job*!*Suffix*!*Description","*!*",V.Local.sTitle)
+F.Intrinsic.String.Split("1500*!*1000*!*2500","*!*",V.Local.sWidth)
+V.Local.sSQL.Set("Select JOB, SUFFIX, DESCRIPTION From V_JOB_HEADER Order By JOB+ Suffix")
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.Browser("Job Browser","con",V.Local.sSQL,V.Local.sTitle,V.Local.sWidth,V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.F_WO.txtToWO.Text(V.Local.sRet(0))
+	Gui.F_WO.txtToSuffix.Text(V.Local.sRet(1))
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("BrowserTo_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4040_HEAT_REPORT.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.BrowserTo.End
+
+Program.Sub.Add.Start
+F.Intrinsic.Control.SetErrorHandler("Add_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+F.Intrinsic.Control.If(V.Global.bBusy,=,True)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+V.Global.bBusy.Set(True)
+
+V.Local.sBeg.Declare(String)
+V.Local.sEnd.Declare(String)
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.Control.If(V.Screen.F_WO!txtWOFrom.Text,=,"")
+	F.Intrinsic.UI.Msgbox("Select a beginning job","Error Message")
+F.Intrinsic.Control.ElseIf(V.Screen.F_WO!txtToWO.Text,=,"")
+	F.Intrinsic.UI.Msgbox("Select a ending job","Error Message")
+F.Intrinsic.Control.Elseif(V.Screen.F_WO!txtToWO.Text,<,V.Screen.F_WO!txtWOFrom.Text)
+	F.Intrinsic.UI.Msgbox("Invalid job range","Error Message")
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.If(V.Screen.F_WO!txtWOFrom.Text,=,V.Screen.F_WO!txtToWO.Text)
+		F.Intrinsic.Control.AndIf(V.Screen.F_WO!txtFromSuffix.Text,>,V.Screen.F_WO!txtToSuffix.Text)
+		F.Intrinsic.UI.Msgbox("Invalid job suffix range","Error Message")
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Global.iKey,1,V.Global.iKey)
+		Gui.F_WO.lvwBeg.AddListItem(V.Global.iKey,V.Global.iKey)
+		Gui.F_WO.lvwBeg.SetListItemSubItemText(V.Global.iKey,1,V.Screen.F_WO!txtWOFrom.Text)
+		Gui.F_WO.lvwBeg.SetListItemSubItemText(V.Global.iKey,2,V.Screen.F_WO!txtFromSuffix.Text)
+		Gui.F_WO.lvwBeg.SetListItemSubItemText(V.Global.iKey,3,V.Screen.F_WO!txtToWO.Text)
+		Gui.F_WO.lvwBeg.SetListItemSubItemText(V.Global.iKey,4,V.Screen.F_WO!txtToSuffix.Text)
+		F.Intrinsic.Control.CallSub(Clear)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+V.Global.bBusy.Set(False)
+
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Add_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4040_HEAT_REPORT.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.Add.End
+
+Program.Sub.Remove.Start
+F.Intrinsic.Control.SetErrorHandler("Remove_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+F.Intrinsic.Control.If(V.Global.bBusy,=,True)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+V.Global.bBusy.Set(True)
+
+V.Local.sRet.Declare(Long)
+V.Local.iOrd.Declare(Long)
+
+F.Intrinsic.Control.If(V.Global.sKey,=,"")
+	F.Intrinsic.UI.Msgbox("Select row to delete","Delete Error")
+F.Intrinsic.Control.Else
+	Gui.F_WO.lvwBeg.RetrieveItemOrdinal(V.Global.sKey,V.Global.iOrdinal)
+	F.Intrinsic.String.Split(V.Screen.F_WO!lvwBeg.ListItemTextExtended(V.Global.iOrdinal),"*!*",V.local.sRet)
+	Gui.F_WO.txtWOFrom.Text(V.Local.sRet(1).Trim)
+	Gui.F_WO.txtFromSuffix.Text(V.Local.sRet(2).Trim)
+	Gui.F_WO.txtToWO.Text(V.Local.sRet(3).Trim)
+	Gui.F_WO.txtToSuffix.Text(V.Local.sRet(4).Trim)
+	Gui.F_WO.lvwBeg.RemoveItem(V.Global.sKey)
+	V.Global.sKey.Set("")
+F.Intrinsic.Control.EndIf
+V.Global.bBusy.Set(False)
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Remove_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4040_HEAT_REPORT.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.Remove.End
+
+Program.Sub.lvwbeg_click.Start
+F.Intrinsic.Control.SetErrorHandler("lvwbeg_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Global.sKey.Set(V.Args.ItemKey)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("lvwbeg_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4040_HEAT_REPORT.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.lvwbeg_click.End
+
+Program.Sub.cmdprint_click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdprint_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sSQL.Declare(String)
+V.Local.sKey.Declare(String)
+V.Local.sBeg.Declare(String)
+V.Local.sEnd.Declare(String)
+V.Local.i.Declare(Long)
+V.Local.sJob.Declare(String)
+V.Local.iOrd.Declare(String)
+V.Local.ia.Declare(Long)
+V.Local.iUB.Declare(Long)
+V.Local.sRet.Declare(String)
+V.Local.sRet2.Declare(String)
+V.Local.iY.Declare(Long)
+V.Local.iZ.Declare(Long)
+V.Local.iB.Declare(Long)
+V.Local.iC.Declare(Long)
+V.Local.iM.Declare(Long)
+V.Local.sPart.Declare(String)
+V.Local.sConcatPart.Declare(String)
+V.Local.sLot.Declare(String)
+V.Local.sBin.Declare(String)
+V.Local.sHeat.Declare(String)
+V.Local.fPct.Declare(Float)
+V.Local.sPct.Declare(String)
+V.Local.iLUB.Declare(Long)
+V.Local.sLoc.Declare(String)
+V.Local.sSN.Declare(String)
+V.Local.iRPTID.Declare(Long)
+V.Local.iDoc.Declare(Long)
+
+V.Local.sRouter.Declare(String)
+
+
+V.Global.bBusy.Set(True)
+
+F.Global.BI.GetRunID(V.Global.iBIRunID)
+F.Global.BI.startLogging(V.Global.iBIRunID,V.Local.iRPTID,-1,"",V.Global.iBILogID)
+
+Gui.F_WO..Visible(false)
+
+F.Intrinsic.UI.InvokeWaitDialog("Loading...","Please Wait...")
+V.uGlobal.uReport.Redim(-1,-1)
+V.uGlobal.uJob.Redim(-1,-1)
+V.Local.iLUB.set(-1)
+V.Local.iUB.Set(-1)
+V.uGlobal.uDocs.Redim(-1,-1)
+
+Gui.F_WO.lvwBeg.RetrieveAllListItems(V.Local.sKey)
+F.Intrinsic.String.Split(V.Local.sKey,"*!*",V.Local.sKey)
+F.Intrinsic.Control.For(V.Local.i,V.Local.sKey.LBound,V.Local.sKey.UBound,1)
+
+	Gui.F_WO.lvwBeg.ListItemKeyToOrdinal(V.Local.sKey(v.Local.i),V.Local.iOrd)
+	V.Local.sJob.Set(V.Screen.F_WO!lvwBeg.ListItemTextExtended(V.Local.iOrd))
+	F.Intrinsic.String.Split(V.Local.sJob,"*!*",V.Local.sJob)
+	F.Intrinsic.String.Concat(V.Local.sJob(1),V.Local.sJob(2),V.Local.sBeg)
+	F.Intrinsic.String.Concat(V.Local.sJob(3),V.Local.sJob(4),V.Local.sEnd)
+	'load job header info
+	F.Intrinsic.String.Concat("Select Job, Suffix, Part, Description, Customer From V_JOB_HEADER Where JOB+ Suffix between '",V.Local.sBeg,"' AND '",V.Local.sEnd,"'",V.Local.sSQL)
+	F.ODBC.Connection!con.OpenRecordsetRO("rstA",V.Local.sSQL)
+	F.Intrinsic.Control.If(V.ODBC.con!rstA.EOF,=,False)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("con","rstA","V.uGlobal.uJob",True)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.con!rstA.Close
+
+	'Load Job Operations data
+	F.Intrinsic.String.Concat("Select Job, Suffix, Seq, LMO, Description, Part, UM, Hours_Estimated,Code_Sort_Oper From V_JOB_OPERATIONS Where JOB+ Suffix between '",V.Local.sBeg,"' AND '",V.Local.sEnd,"' and LMO = 'M'",V.Local.sSQL)
+	F.ODBC.Connection!con.OpenRecordsetRO("rstA",V.Local.sSQL)
+	F.Intrinsic.Control.If(V.ODBC.con!rstA.EOF,=,False)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("con","rstA","V.uGlobal.uOps",True)
+	F.Intrinsic.Control.Endif
+	F.ODBC.con!rstA.Close
+
+	'Load Heat and Bin
+	F.Intrinsic.String.Concat("Select Job, Suffix, Sequence, Purchase_Order, Lot, Heat, Part, Location, BIN,Serial_Number From V_ITEM_HISTORY Where JOB+ Suffix between '",V.Local.sBeg,"' and '",V.Local.sEnd,"' and Code_Transaction = 'J55'",V.Local.sSQL)
+	F.ODBC.Connection!con.OpenRecordsetRO("rstA",V.Local.sSQL)
+	F.Intrinsic.Control.If(V.ODBC.con!rstA.EOF,=,False)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("con","rstA","v.uGlobal.uHeat",True)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.con!rstA.Close
+F.Intrinsic.Control.Next(V.Local.i)
+F.Intrinsic.Debug.Stop
+
+'split parent into assembly use right half '-' as delimeter
+F.Intrinsic.Control.For(V.Local.i,0,V.uGlobal.uJob.UBound,1)
+	F.Intrinsic.String.Instr(V.uGlobal.uJob(v.Local.i)!Part,"-",V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,=,"7")
+		F.Intrinsic.String.Split(V.uGlobal.uJob(v.Local.i)!Part,"-",V.Local.sRet)
+		V.uGlobal.uJob(v.Local.i)!Assembly.Set(V.Local.sRet(1))
+	F.Intrinsic.Control.Else
+		V.uGlobal.uJob(v.Local.i)!Assembly.Set(V.uGlobal.uJob(v.Local.i)!Part)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.i)
+
+'populate uReport for BI Table
+F.Intrinsic.Control.For(V.Local.ia,V.uGlobal.uOps.LBound,V.uGlobal.uOps.UBound,1)
+	F.Intrinsic.UI.ChangeWaitStatus("Loading data...",V.Local.ia,V.uGlobal.uOps.LBound,V.uGlobal.uOps.UBound)
+	F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uHeat!Job,V.uGlobal.uOps(v.Local.ia)!Job,V.uGlobal.uHeat!Suffix,V.uGlobal.uOps(v.Local.ia)!Suffix,V.uGlobal.uHeat!Sequence,V.uGlobal.uOps(v.Local.ia)!Seq,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		F.Intrinsic.Control.For(V.Local.iY,V.Local.sRet.LBound,V.Local.sRet.UBound,1)
+			F.Intrinsic.Math.Add(V.Local.iUB,1,V.Local.iUB)
+			F.Intrinsic.Control.If(V.Local.iUB,=,0)
+				V.uGlobal.uReport.Redim(0,0)
+			F.Intrinsic.Control.Else
+				V.uGlobal.uReport.RedimPreserve(0,V.Local.iUB)
+			F.Intrinsic.Control.EndIf
+			V.uGlobal.uReport(v.Local.iUB)!Heat.Set(V.uGlobal.uHeat(V.Local.sRet(V.Local.iY))!Heat)
+			V.uGlobal.uReport(v.Local.iUB)!Lot_PO.Set(V.uGlobal.uHeat(V.Local.sRet(V.Local.iY))!Lot)
+			'search if link exists from ID column in link_data where ID = part+loc+lot+bin+heat and type = '00031'
+			F.Intrinsic.String.RPad(V.uGlobal.uHeat(V.Local.sRet(V.Local.iY))!Part.RTrim," ",20,V.Local.sPart)
+			F.Intrinsic.String.RPad(V.uGlobal.uHeat(V.Local.sRet(V.Local.iY))!Location," ",2,V.Local.sLoc)
+			F.Intrinsic.String.RPad(V.uGlobal.uHeat(V.Local.sRet(V.Local.iY))!Lot.RTrim," ",15,V.Local.sLot)
+			F.Intrinsic.String.RPad(V.uGlobal.uHeat(V.Local.sRet(V.Local.iY))!BIN.RTrim," ",6,V.Local.sBin)
+			F.Intrinsic.String.RPad(V.uGlobal.uHeat(V.Local.sRet(V.Local.iY))!Heat," ",15,V.Local.sHeat)
+			F.Intrinsic.String.RTrim(V.uGlobal.uHeat(V.Local.sRet(V.Local.iY))!Serial_Number,V.Local.sSN)
+			F.Intrinsic.String.Concat(V.Local.sPart,V.Local.sLoc,V.Local.sLot,V.Local.sBin,V.Local.sHeat,V.Local.sSN,V.Local.sKey)
+			F.intrinsic.string.replace(V.local.sKey,"'","''",V.local.sKey)
+						 
+
+			F.Intrinsic.String.Concat("Select LINK_ID From V_LINK_DATA Where Type = '00031' and ID = '",V.Local.sKey,"'",V.Local.sSQL)
+			F.ODBC.Connection!con.OpenRecordsetRO("rstA",V.Local.sSQL)
+			F.Intrinsic.Control.If(V.ODBC.con!rstA.EOF,=,True)
+				V.uGlobal.uReport(v.Local.iUB)!Link_Exists.Set("N")
+			F.Intrinsic.Control.Else
+				V.uGlobal.uReport(v.Local.iUB)!Link_Exists.Set("Y")
+				'If Link Exists, load link FQP to another grid that will load for the user to select from, to view, print. Hyperlink the column for the FQP to open it up in the default viewer for the file type.
+				'UDT = uDocs Link_ID,DESCRIPTION,Grp_ID,DocPath(PATH+FILE) from ATG_DOC_ASSOC,Print(y/n), control print element on cell click(checkbox) event on grid.
+				'Shell Execute PRINT function to print all docs that are checked = 'Y', default docs in groups 3,4,6 to print = Y
+				F.Intrinsic.String.Build("select ltrim(rtrim(Path)) + ltrim(rtrim(File)) as File, DESCRIPTION from ATG_DOC_ASSOC where LINK_ID = '{0}'",V.ODBC.con!rstA.FieldVal!LINK_ID,V.Local.sSql)
+				F.ODBC.Connection!con.OpenRecordsetRO("rstDoc",V.Local.sSQL)
+				F.Intrinsic.Control.If(V.ODBC.con!rstDoc.EOF,<>,True)
+					F.Intrinsic.Control.DoUntil(V.ODBC.con!rstDoc.EOF,=,True)
+						F.intrinsic.control.if(V.uglobal.uDocs.uBound,<>,-1)
+							F.Intrinsic.Math.Add(V.uGlobal.uDocs.UBound,1,V.Local.iDoc)
+							V.uGlobal.uDocs.RedimPreserve(V.uGlobal.uDocs.LBound,V.Local.iDoc)
+						F.intrinsic.control.else
+							V.uGlobal.uDocs.Redim(0,0)
+							V.Local.iDoc.Set(0)
+						F.intrinsic.control.endif
+						
+						V.uGlobal.uDocs(v.Local.iDoc)!File.Set(V.ODBC.con!rstDoc.FieldValTrim!FILE)
+						V.uGlobal.uDocs(v.Local.iDoc)!Description.Set(V.ODBC.con!rstDoc.FieldValTrim!Description)
+						F.ODBC.con!rstDoc.MoveNext
+					F.Intrinsic.Control.Loop
+				F.Intrinsic.Control.EndIf
+				F.ODBC.con!rstDoc.Close
+			F.Intrinsic.Control.EndIf
+			F.ODBC.con!rstA.Close
+			'Get Doc linked on Work Order
+			V.Local.sKey.Set("")
+			F.Intrinsic.String.RPad(V.uGlobal.uOps(v.Local.ia)!Job," ",6,V.Local.sKey)
+			F.Intrinsic.String.Build("{0}{1}",V.Local.sKey,V.uGlobal.uOps(v.Local.ia)!Suffix.Trim,V.Local.sKey)
+			F.Intrinsic.String.Concat("Select LINK_ID From V_LINK_DATA Where Type = '00020' and ID = '",V.Local.sKey,"'",V.Local.sSQL)
+			F.ODBC.Connection!con.OpenRecordsetRO("rstA",V.Local.sSQL)
+			F.Intrinsic.Control.If(V.ODBC.con!rstA.EOF,<>,True)
+				V.uGlobal.uReport(v.Local.iUB)!Link_Exists.Set("Y")
+				'If Link Exists, load link FQP to another grid that will load for the user to select from, to view, print. Hyperlink the column for the FQP to open it up in the default viewer for the file type.
+				'UDT = uDocs Link_ID,DESCRIPTION,Grp_ID,DocPath(PATH+FILE) from ATG_DOC_ASSOC,Print(y/n), control print element on cell click(checkbox) event on grid.
+				'Shell Execute PRINT function to print all docs that are checked = 'Y', default docs in groups 3,4,6 to print = Y
+				F.Intrinsic.String.Build("select ltrim(rtrim(Path)) + ltrim(rtrim(File)) as File, DESCRIPTION from ATG_DOC_ASSOC where LINK_ID = '{0}'",V.ODBC.con!rstA.FieldVal!LINK_ID,V.Local.sSql)
+				F.ODBC.Connection!con.OpenRecordsetRO("rstDoc",V.Local.sSQL)
+				F.Intrinsic.Control.If(V.ODBC.con!rstDoc.EOF,<>,True)
+					F.Intrinsic.Control.DoUntil(V.ODBC.con!rstDoc.EOF,=,True)
+						F.intrinsic.control.if(V.uglobal.uDocs.uBound,<>,-1)
+							F.Intrinsic.Math.Add(V.uGlobal.uDocs.UBound,1,V.Local.iDoc)
+							V.uGlobal.uDocs.RedimPreserve(V.uGlobal.uDocs.LBound,V.Local.iDoc)
+						F.intrinsic.control.else
+							V.uGlobal.uDocs.Redim(0,0)
+							V.Local.iDoc.Set(0)
+						F.intrinsic.control.endif
+						
+						V.uGlobal.uDocs(v.Local.iDoc)!File.Set(V.ODBC.con!rstDoc.FieldValTrim!FILE)
+						V.uGlobal.uDocs(v.Local.iDoc)!Description.Set(V.ODBC.con!rstDoc.FieldValTrim!Description)
+						F.ODBC.con!rstDoc.MoveNext
+					F.Intrinsic.Control.Loop
+				F.Intrinsic.Control.EndIf
+				F.ODBC.con!rstDoc.Close
+			F.Intrinsic.Control.EndIf
+			F.ODBC.con!rstA.Close
+
+			'Get Docs Linked on Router
+			F.Intrinsic.String.Build("Select ROUTER from v_JOB_HEADER where JOB = '{0}' and SUFFIX = '{1}'",V.uGlobal.uOps(v.Local.ia)!Job.Trim,V.uGlobal.uOps(v.Local.ia)!Suffix.Trim,V.Local.sSQl)
+			F.ODBC.Connection!con.OpenRecordsetRO("rstRtr",V.Local.sSQL)
+			F.Intrinsic.Control.If(V.ODBC.con!rstRtr.EOF,<>,True)
+				V.Local.sKey.Set(V.ODBC.con!rstRtr.FieldValTrim!ROUTER)
+				F.Intrinsic.String.Concat("Select LINK_ID From V_LINK_DATA Where Type = '00035' and ID = '",V.Local.sKey.PSQLFriendly,"'",V.Local.sSQL)
+				F.ODBC.Connection!con.OpenRecordsetRO("rstA",V.Local.sSQL)
+				F.Intrinsic.Control.If(V.ODBC.con!rstA.EOF,<>,True)
+					V.uGlobal.uReport(v.Local.iUB)!Link_Exists.Set("Y")
+					'If Link Exists, load link FQP to another grid that will load for the user to select from, to view, print. Hyperlink the column for the FQP to open it up in the default viewer for the file type.
+					'UDT = uDocs Link_ID,DESCRIPTION,Grp_ID,DocPath(PATH+FILE) from ATG_DOC_ASSOC,Print(y/n), control print element on cell click(checkbox) event on grid.
+					'Shell Execute PRINT function to print all docs that are checked = 'Y', default docs in groups 3,4,6 to print = Y
+					F.Intrinsic.String.Build("select ltrim(rtrim(Path)) + ltrim(rtrim(File)) as File, DESCRIPTION from ATG_DOC_ASSOC where LINK_ID = '{0}'",V.ODBC.con!rstA.FieldVal!LINK_ID,V.Local.sSql)
+					F.ODBC.Connection!con.OpenRecordsetRO("rstDoc",V.Local.sSQL)
+					F.Intrinsic.Control.If(V.ODBC.con!rstDoc.EOF,<>,True)
+						F.Intrinsic.Control.DoUntil(V.ODBC.con!rstDoc.EOF,=,True)
+							F.intrinsic.control.if(V.uglobal.uDocs.uBound,<>,-1)
+								F.Intrinsic.Math.Add(V.uGlobal.uDocs.UBound,1,V.Local.iDoc)
+								V.uGlobal.uDocs.RedimPreserve(V.uGlobal.uDocs.LBound,V.Local.iDoc)
+							F.intrinsic.control.else
+								V.uGlobal.uDocs.Redim(0,0)
+								V.Local.iDoc.Set(0)
+							F.intrinsic.control.endif
+							
+							V.uGlobal.uDocs(v.Local.iDoc)!File.Set(V.ODBC.con!rstDoc.FieldValTrim!FILE)
+							V.uGlobal.uDocs(v.Local.iDoc)!Description.Set(V.ODBC.con!rstDoc.FieldValTrim!Description)
+							F.ODBC.con!rstDoc.MoveNext
+						F.Intrinsic.Control.Loop
+					F.Intrinsic.Control.EndIf
+					F.ODBC.con!rstDoc.Close
+				F.Intrinsic.Control.EndIf
+				F.ODBC.con!rstA.Close
+
+			F.Intrinsic.Control.EndIf
+			F.ODBC.con!rstRtr.Close
+
+			V.uGlobal.uReport(v.Local.iUB)!Sort_Part.Set(V.uGlobal.uOps(v.Local.ia)!Code_Sort_Oper)
+			V.uGlobal.uReport(V.Local.iUB)!Job.Set(V.uGlobal.uOps(V.Local.ia)!Job)
+			V.uGlobal.uReport(V.Local.iUB)!Suffix.Set(V.uGlobal.uOps(V.Local.ia)!Suffix)
+			V.uGlobal.uReport(v.Local.iUB)!Mat_Part.Set(V.uGlobal.uOps(v.Local.ia)!Part)
+			V.uGlobal.uReport(v.Local.iUB)!UM.Set(V.uGlobal.uOps(v.Local.ia)!UM)
+			V.uGlobal.uReport(v.Local.iUB)!Ord_Qty.Set(V.uGlobal.uOps(v.Local.ia)!Hours_Estimated)
+		F.Intrinsic.Control.Next(V.Local.iY)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iUB,1,V.Local.iUB)
+		F.Intrinsic.Control.If(V.Local.iUB,=,0)
+			V.uGlobal.uReport.Redim(0,0)
+		F.Intrinsic.Control.Else
+			V.uGlobal.uReport.RedimPreserve(0,V.Local.iUB)
+		F.Intrinsic.Control.EndIf
+		V.uGlobal.uReport(v.Local.iUB)!Sort_Part.Set(V.uGlobal.uOps(v.Local.ia)!Code_Sort_Oper)
+		V.uGlobal.uReport(V.Local.iUB)!Job.Set(V.uGlobal.uOps(V.Local.ia)!Job)
+		V.uGlobal.uReport(V.Local.iUB)!Suffix.Set(V.uGlobal.uOps(V.Local.ia)!Suffix)
+		V.uGlobal.uReport(v.Local.iUB)!Mat_Part.Set(V.uGlobal.uOps(v.Local.ia)!Part)
+		V.uGlobal.uReport(v.Local.iUB)!UM.Set(V.uGlobal.uOps(v.Local.ia)!UM)
+		V.uGlobal.uReport(v.Local.iUB)!Ord_Qty.Set(V.uGlobal.uOps(v.Local.ia)!Hours_Estimated)
+	F.Intrinsic.Control.Endif
+F.Intrinsic.Control.Next(V.Local.ia)
+
+'loop through uJob linked on Job and Suffix and update Description,Parent, Assembly for uReport
+F.Intrinsic.Control.For(V.Local.i,0,V.uGlobal.uReport.UBound,1)
+	F.Intrinsic.UI.ChangeWaitStatus("Loading Report...",V.Local.i,V.uGlobal.uReport.LBound,V.uGlobal.uReport.UBound)
+	F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uJob!Job,V.uGlobal.uReport(v.Local.i)!Job,V.uGlobal.uJob!Suffix,V.uGlobal.uReport(v.Local.i)!Suffix,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		F.Intrinsic.Control.For(V.Local.iY,V.Local.sRet.LBound,V.Local.sRet.UBound,1)
+			V.uGlobal.uReport(v.Local.i)!Parent_Desc.Set(V.uGlobal.uJob(V.Local.sRet(V.Local.iY))!Description)
+			V.uGlobal.uReport(v.Local.i)!Parent.Set(V.uGlobal.uJob(V.Local.sRet(V.Local.iY))!Part)
+			V.uGlobal.uReport(v.Local.i)!Assembly.Set(V.uGlobal.uJob(V.Local.sRet(V.Local.iY))!Assembly)
+		F.Intrinsic.Control.Next(V.Local.iY)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.i)
+F.intrinsic.variable.UDTMultiFlag(V.uglobal.uReport!Job,"")
+F.intrinsic.variable.udtDeleteFlagged(V.uglobal.uReport)
+
+F.Intrinsic.Variable.UDTSetMemberValue(V.uGlobal.uReport!BIRUNID,V.Global.iBIRunID)
+
+'F.Intrinsic.Variable.UDTMultiFlagDuplicates(V.uGlobal.uReport!BRIUNID,V.uGlobal.uReport!JOB,V.uGlobal.uReport!SUFFIX,V.uGlobal.uReport!SEQ,V.uGlobal.uReport!DESCRIPTION,V.uGlobal.uReport!ASSEMBLY,V.uGlobal.uReport!PART,V.uGlobal.uReport!MATERIAL,V.uGlobal.uReport!LOT,V.uGlobal.uReport!HEAT,V.uGlobal.uReport!LINK,V.uGlobal.uReport!LMO,V.uGlobal.uReport!PURCHASE_ORDER,V.uGlobal.uReport!CUSTOMER,V.uGlobal.uReport!NAME_CUSTOMER,V.uGlobal.uReport!UM,V.uGlobal.uReport!UNITS,V.uGlobal.uReport!REV)
+F.Intrinsic.Variable.UDTMultiFlagDuplicates(V.uGlobal.uReport!BIRUNID,V.uGlobal.uReport!Parent,V.uGlobal.uReport!Parent_Desc,V.uGlobal.uReport!Assembly,V.uGlobal.uReport!Sort_Part,V.uGlobal.uReport!Ord_Qty,V.uGlobal.uReport!UM,V.uGlobal.uReport!Mat_Part,V.uGlobal.uReport!Lot_PO,V.uGlobal.uReport!Heat,V.uGlobal.uReport!Link_Exists)
+F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uReport)
+
+'save data to recordset
+F.ODBC.Connection!con.OpenRecordsetRW("rst","select * from GCG_4040_BI_HEAT_RPT")
+F.Intrinsic.control.If(V.uGlobal.uReport.UBound,<>,-1)
+	F.Intrinsic.Variable.SaveUDTToRecordset("con","rst","v.uGlobal.uReport")
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox("No Records in selection made","")
+	F.Intrinsic.Control.End
+
+F.Intrinsic.Control.EndIf
+F.ODBC.con!rst.Close
+
+F.Global.BI.stoplogging(V.Global.iBILogID)
+F.Intrinsic.UI.CloseWaitDialog
+								   
+
+F.Intrinsic.Control.If(V.Screen.F_WO!chk1.Value,=,1)
+
+	F.Intrinsic.Control.CallSub(Loaddocs)
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.CallSub(Callbi)
+	F.Intrinsic.Control.End
+
+F.Intrinsic.Control.EndIf
+
+'F.Intrinsic.Control.CallSub(Callbi)
+
+'F.Intrinsic.Debug.Stop
+
+F.Intrinsic.Control.Label("cmdprint_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4040_HEAT_REPORT.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.cmdprint_click.End
+
+Program.Sub.Clear.Start
+F.Intrinsic.Control.SetErrorHandler("Clear_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.F_WO.txtWOFrom.Text("")
+Gui.F_WO.txtFromSuffix.Text("")
+Gui.F_WO.txtToWO.Text("")
+Gui.F_WO.txtToSuffix.Text("")
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Clear_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4040_HEAT_REPORT.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.Clear.End
+
+Program.Sub.CallBI.Start
+F.Intrinsic.Control.SetErrorHandler("CallBI_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.iRet.Declare(String)
+V.Local.sParams.Declare(String)
+V.Local.sParamValues.Declare(String)
+
+'set params and values for report and print report
+'V.Local.sParams.Set("RUNID")
+'V.Local.sParamValues.Set(V.Global.iBIRunID)
+F.Global.BI.RunReportPreProcessor(V.Global.iBIRunID,V.Global.iBILogID,"","","",-1,True,"",-1,"",-1,"","",V.Local.iRet)
+
+'F.Intrinsic.Control.CallSub(Unload)
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("CallBI_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4040_HEAT_REPORT.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.CallBI.End
+
+Program.Sub.Initialize.Start
+F.Intrinsic.Control.SetErrorHandler("Initialize_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+'Load Screen for Docs
+
+'default printer
+gui.F_DataBook.txt_Printer.Text(v.Printer.defaultprinter)
+
+F.Intrinsic.Control.CallSub(Buildstyle_docs)
+
+'clear table
+F.ODBC.Connection!con.Execute("delete from GCG_4040_BI_HEAT_RPT")
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Initialize_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_HEAT_REPORT2.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.Initialize.End
+
+Program.Sub.f_databook_unload.Start
+Gui.F_DataBook..Visible(False)
+
+'Now print report
+F.Intrinsic.Control.CallSub(Callbi)
+
+Program.Sub.f_databook_unload.End
+
+Program.Sub.cmd_txt_printer_click.Start
+F.Intrinsic.Control.SetErrorHandler("cmd_txt_printer_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+F.Intrinsic.Printer.SelectPrinterDialog
+
+f.Intrinsic.Control.If(v.ambient.PRINTERDIALOGSELECTION,<>,"***CANCEL***")
+	gui.F_DataBook.txt_Printer.Text(v.ambient.PRINTERDIALOGSELECTION)
+	Function.Intrinsic.Printer.SetDefaultPrinter(v.ambient.PRINTERDIALOGSELECTION)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_txt_printer_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_HEAT_REPORT2.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.cmd_txt_printer_click.End
+
+Program.Sub.gsfg_databook_checkclick.Start
+F.Intrinsic.Control.SetErrorHandler("gsfg_databook_checkclick_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.i.Declare(Long)
+V.Local.iChecked.Declare(Long)
+
+F.Intrinsic.Math.Sub(V.Args.Key,1,V.Local.i)
+
+Gui.F_DataBook.gsfg_DataBook.GetTextMatrix(0,V.Args.Key.Long,V.Local.iChecked)
+F.Intrinsic.Control.If(V.Local.iChecked,=,0)
+	f.Intrinsic.Variable.UDTFlagOrdinal(v.uGlobal.uDocs,True,v.Local.i.String)
+F.Intrinsic.Control.Else
+	f.Intrinsic.Variable.UDTFlagOrdinal(v.uGlobal.uDocs,False,v.Local.i.String)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("gsfg_databook_checkclick_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_HEAT_REPORT2.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.gsfg_databook_checkclick.End
+
+Program.Sub.f_databook_resize.Start
+V.local.width.declare(Long)
+V.local.height.declare(Long)
+V.local.x.declare(Long)
+V.local.Y.declare(Long)
+Function.Intrinsic.Control.If(Variable.Screen.F_DataBook.Width,<,10200)
+	Gui.F_DataBook..Size(10200,Variable.Screen.F_DataBook.Height)
+Function.Intrinsic.Control.EndIf
+Function.Intrinsic.Control.If(Variable.Screen.F_DataBook.height,<,5100)
+	Gui.F_DataBook..Size(Variable.Screen.F_DataBook.Width,5100)
+Function.Intrinsic.Control.EndIf
+Function.Intrinsic.Math.mult(Variable.Screen.F_DataBook.Height,0.576,Variable.Local.height)
+Function.Intrinsic.Math.mult(Variable.Screen.F_DataBook.Width,0.874,Variable.Local.width)
+Gui.F_DataBook.gsfg_DataBook.Size(V.Local.width,V.Local.height)
+Function.Intrinsic.Math.mult(Variable.Screen.F_DataBook.Height,0.784,Variable.Local.Y)
+Gui.F_DataBook.cmd_Print.Position(200,V.Local.y)
+
+Program.Sub.f_databook_resize.End
+
+Program.Sub.cmd_print_click.Start
+F.Intrinsic.Control.SetErrorHandler("cmd_print_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.i.Declare(Long)
+V.Local.sRet.Declare(String)
+V.Local.sPID.Declare(String)
+V.Local.iTask.Declare(Long)
+V.Local.bStat.Declare(Boolean)
+
+F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uDocs)
+
+F.Intrinsic.Control.For(V.Local.i,V.uGlobal.uDocs.LBound,V.uGlobal.uDocs.UBound,1)
+
+	F.Intrinsic.Task.ShellExec(V.Caller.Handle,"PRINT",V.uGlobal.uDocs(v.Local.i)!File.Trim,"","",5)
+	F.Intrinsic.UI.Sleep(5)
+	F.Intrinsic.Task.GetTaskList(V.Local.sRet)
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	F.Intrinsic.Control.For(V.Local.iTask,V.Local.sRet.LBound,V.Local.sRet.UBound,1)
+		F.Intrinsic.String.Split(V.Local.sRet(v.Local.iTask),"!*!",V.Local.sPID)
+		F.Intrinsic.String.IsInString(V.Local.sPID(1),"AcroRd",True,V.Local.bStat)
+		F.Intrinsic.Control.If(V.Local.bStat,=,True)
+			f.Intrinsic.Task.TerminatePID(v.Local.sPID(0).Trim)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.iTask)
+
+F.Intrinsic.Control.Next(V.local.i)
+
+F.Intrinsic.Control.CallSub(F_databook_unload)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_print_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_HEAT_REPORT2.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.cmd_print_click.End
+
+Program.Sub.BuildStyle_Docs.Start
+F.Intrinsic.Control.SetErrorHandler("BuildStyle_Docs_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.F_DataBook.gsfg_DataBook.Cols(4)
+Gui.F_DataBook.gsfg_DataBook.Rows(1)
+Gui.F_DataBook.gsfg_DataBook.Rows(2)
+Gui.F_DataBook.gsfg_DataBook.FixedRows(1)
+
+Gui.F_DataBook.gsfg_DataBook.TextMatrix(0,0,"Print")
+Gui.F_DataBook.gsfg_DataBook.TextMatrix(1,0,"Description")
+Gui.F_DataBook.gsfg_DataBook.TextMatrix(2,0,"File")
+
+Gui.F_DataBook.gsfg_DataBook.BuildStyle(2,0,"Type","CheckBox","")
+Gui.F_DataBook.gsfg_DataBook.BuildStyle(2,1,"Type","Locked",True)
+Gui.F_DataBook.gsfg_DataBook.BuildStyle(2,1,"Format","Alignment",2)
+Gui.F_DataBook.gsfg_DataBook.BuildStyle(2,2,"Type","Locked",True)
+Gui.F_DataBook.gsfg_DataBook.BuildStyle(2,2,"Format","Alignment",2)
+Gui.F_DataBook.gsfg_DataBook.BuildStyle(2,3,"Type","Command","View")
+Gui.F_DataBook.gsfg_DataBook.BuildStyle(2,3,"Format","Alignment",4)
+
+Gui.F_DataBook.gsfg_DataBook.SetColumnPercentages(".10:.30:.50:.10")
+
+Gui.F_DataBook.gsfg_DataBook.ApplyStyle(1,2)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("BuildStyle_Docs_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_HEAT_REPORT2.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.BuildStyle_Docs.End
+
+Program.Sub.gsfg_databook_commandclick.Start
+F.Intrinsic.Control.SetErrorHandler("gsfg_databook_commandclick_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'Preview file in default system program
+V.Local.sFile.Declare(String)
+Gui.F_DataBook.gsfg_DataBook.GetTextMatrix(2,V.Args.Key,V.Local.sFile)
+F.Intrinsic.Task.ShellExec(V.Caller.Handle,"OPEN",V.Local.sFile,"","",1)
+
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("gsfg_databook_commandclick_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_HEAT_REPORT2.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.gsfg_databook_commandclick.End
+
+Program.Sub.LoadDocs.Start
+F.Intrinsic.Control.SetErrorHandler("LoadDocs_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+F.Intrinsic.Variable.UDTMultiFlagDuplicates(V.uGlobal.uDocs!Description,V.uGlobal.uDocs!File)
+F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uDocs)
+
+'Load Documents to grid
+Gui.F_DataBook.gsfg_DataBook.LoadFromUDT("V.uGlobal.uDocs","DESCRIPTION::1*!*FILE::2",2)
+
+F.Intrinsic.Variable.UDTFlagAll(V.uGlobal.uDocs)
+
+Gui.F_DataBook..Show
+
+
+F.Intrinsic.Control.Label("LoadDocs_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_HEAT_REPORT2.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.LoadDocs.End
+
+Program.Sub.Comments.Start
+${$0$}$$}$$}$12:00:00 AM$}$False
+Program.Sub.Comments.End
